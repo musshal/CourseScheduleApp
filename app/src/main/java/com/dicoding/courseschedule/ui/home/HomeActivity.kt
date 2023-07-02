@@ -12,7 +12,6 @@ import com.dicoding.courseschedule.R
 import com.dicoding.courseschedule.data.Course
 import com.dicoding.courseschedule.ui.add.AddCourseActivity
 import com.dicoding.courseschedule.ui.list.ListActivity
-import com.dicoding.courseschedule.ui.list.ListViewModelFactory
 import com.dicoding.courseschedule.ui.setting.SettingsActivity
 import com.dicoding.courseschedule.util.DayName
 import com.dicoding.courseschedule.util.QueryType
@@ -30,7 +29,7 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.activity_home)
         supportActionBar?.title = resources.getString(R.string.today_schedule)
 
-        val factory = ListViewModelFactory.createFactory(this)
+        val factory = HomeViewModelFactory.createFactory(this)
         viewModel = ViewModelProvider(this, factory)[HomeViewModel::class.java]
 
         viewModel.getNearestSchedule().observe(this) {
