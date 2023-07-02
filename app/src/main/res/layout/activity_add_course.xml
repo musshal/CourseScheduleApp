@@ -18,7 +18,7 @@
             android:layout_marginEnd="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/courseName"
+                android:id="@+id/ed_course_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -28,7 +28,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
-            android:id="@+id/day"
+            android:id="@+id/spinner_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -44,13 +44,15 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/openDialogStart"
+                android:id="@+id/ib_start_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="showTimePicker"
                 android:src="@drawable/ic_time"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:importantForAccessibility="no" />
+                android:importantForAccessibility="no"
+                tools:ignore="UsingOnClickInXml" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -64,7 +66,7 @@
                     android:textColor="@color/textPrimary"/>
 
                 <TextView
-                    android:id="@+id/startTime"
+                    android:id="@+id/tv_start_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_00_00"
@@ -74,13 +76,15 @@
             </LinearLayout>
 
             <ImageButton
-                android:id="@+id/openDialogEnd"
+                android:id="@+id/ib_end_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:onClick="showTimePicker"
                 android:src="@drawable/ic_time"
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
-                android:importantForAccessibility="no" />
+                android:importantForAccessibility="no"
+                tools:ignore="UsingOnClickInXml" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -94,7 +98,7 @@
                     android:textColor="@color/textPrimary"/>
 
                 <TextView
-                    android:id="@+id/endTime"
+                    android:id="@+id/tv_end_time"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/_00_00"
@@ -113,7 +117,7 @@
             android:layout_marginEnd="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/Lecture"
+                android:id="@+id/ed_lecturer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/lecturer"
@@ -129,7 +133,7 @@
             android:layout_marginEnd="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/note"
+                android:id="@+id/ed_note"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/note"
