@@ -25,6 +25,7 @@ class AddCourseActivity : AppCompatActivity(), TimePickerFragment.DialogTimeList
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_course)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val factory = AddCourseViewModelFactory.createFactory(this)
         viewModel = ViewModelProvider(this, factory)[AddCourseViewModel::class.java]
@@ -37,6 +38,10 @@ class AddCourseActivity : AppCompatActivity(), TimePickerFragment.DialogTimeList
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            android.R.id.home -> {
+                finish()
+                true
+            }
             R.id.action_insert -> {
                 val edCourseName = findViewById<TextInputEditText>(R.id.ed_course_name).text.toString()
                 val spinnerDay = findViewById<Spinner>(R.id.spinner_day).selectedItem.toString()
