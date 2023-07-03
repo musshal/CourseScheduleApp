@@ -46,6 +46,13 @@ class HomeActivity : AppCompatActivity() {
 
             val cardHome = findViewById<CardHomeView>(R.id.view_home)
 
+            cardHome.apply {
+                setCourseName(courseName)
+                setTime(time)
+                setRemainingTime(remainingTime)
+                setLecturer(lecturer)
+                setNote(note)
+            }
         }
 
         findViewById<TextView>(R.id.tv_empty_home).visibility =
