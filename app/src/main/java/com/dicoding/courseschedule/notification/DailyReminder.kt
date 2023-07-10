@@ -38,7 +38,7 @@ class DailyReminder : BroadcastReceiver() {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, DailyReminder::class.java)
         val pendingIntent = PendingIntent
-            .getBroadcast(context, 100, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            .getBroadcast(context, 100, intent, PendingIntent.FLAG_IMMUTABLE)
         val calendar = Calendar.getInstance()
         calendar.set(Calendar.HOUR_OF_DAY, 6)
         calendar.set(Calendar.MINUTE, 0)
@@ -55,7 +55,7 @@ class DailyReminder : BroadcastReceiver() {
         val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager
         val intent = Intent(context, DailyReminder::class.java)
         val pendingIntent = PendingIntent
-            .getBroadcast(context, ID_REPEATING, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            .getBroadcast(context, ID_REPEATING, intent, PendingIntent.FLAG_IMMUTABLE)
         alarmManager.cancel(pendingIntent)
     }
 
